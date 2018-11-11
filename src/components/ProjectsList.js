@@ -15,18 +15,19 @@ class ProjectsList extends Component {
     }
 
     handleSelectedProject = (project) => {
+        const { navigate } = this.props.navigation;
+        navigate('Team');
         this.setState({currentProject: project})
     };
 
     render(){
-        const { currentProject } = this.state;
         const projects = this.props.projects.map( (project, idx) => (
             <ProjectItem key={idx} project={project} onProjectSelection={this.handleSelectedProject.bind(this, project.name)}/>
         ));
 
         return(
             <ScrollView>
-                {projects}
+                { projects }
             </ScrollView>
         )
     }

@@ -14,11 +14,10 @@ class Projects extends Component {
     }
 
     render(){
-        // console.log("props is: ", this.props);
         return(
             <View style={styles.container}>
                 <Text style={styles.title}>Projects</Text>
-                <ProjectList/>
+                <ProjectList navigation={this.props.navigation}/>
             </View>
         )
     }

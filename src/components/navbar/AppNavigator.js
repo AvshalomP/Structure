@@ -1,14 +1,14 @@
 import React from 'react';
-import { createMaterialTopTabNavigator } from 'react-navigation';
+import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 //components
-import Projects from '../screens/Projects';
+import ProjectsNavigator from '../navbar/ProjectsNavigator';
 import AddProject from '../screens/AddProject';
 
 
 const AppNavigator = createMaterialTopTabNavigator({
         Projects: {
-            screen: Projects,
+            screen: ProjectsNavigator,
             navigationOptions: {
                 tabBarLabel: 'Projects',
                 tabBarIcon: ({ tintColor }) => (
