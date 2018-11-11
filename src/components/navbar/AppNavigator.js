@@ -1,6 +1,6 @@
 import React from 'react';
 import { createMaterialTopTabNavigator } from 'react-navigation';
-import Icon from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/Ionicons';
 //components
 import Projects from '../screens/Projects';
 import AddProject from '../screens/AddProject';
@@ -37,7 +37,7 @@ const AppNavigator = createMaterialTopTabNavigator({
                 backgroundColor: 'white',
                 height: '9%',
                 borderTopWidth: 0.3,
-                borderTopColor: 'grey'
+                borderTopColor: 'orange'
             },
             showIcon: true
         }
