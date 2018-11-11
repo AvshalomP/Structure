@@ -6,9 +6,9 @@ import Projects from '../screens/Projects';
 import AddProject from '../screens/AddProject';
 
 
-const NavFooter = state => createMaterialTopTabNavigator({
+const AppNavigator = createMaterialTopTabNavigator({
         Projects: {
-            screen: props => <Projects {...props} {...state} />,
+            screen: Projects,
             navigationOptions: {
                 tabBarLabel: 'Projects',
                 tabBarIcon: ({ tintColor }) => (
@@ -17,7 +17,7 @@ const NavFooter = state => createMaterialTopTabNavigator({
             }
         },
         Add: {
-            screen: props => <AddProject {...props} {...state} />,
+            screen: AddProject,
             navigationOptions: {
                 tabBarLabel: 'Add Project',
                 tabBarIcon: ({ tintColor }) => (
@@ -34,7 +34,7 @@ const NavFooter = state => createMaterialTopTabNavigator({
             activeTintColor: 'orange',
             inactiveTintColor: 'grey',
             style: {
-                backgroundColor: '#fafafa',
+                backgroundColor: 'white',
                 height: '9%',
                 borderTopWidth: 0.3,
                 borderTopColor: 'grey'
@@ -43,4 +43,4 @@ const NavFooter = state => createMaterialTopTabNavigator({
         }
     });
 
-export default NavFooter;
+export default AppNavigator;

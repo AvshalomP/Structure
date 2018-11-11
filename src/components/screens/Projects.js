@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
+import { connect } from 'react-redux';
+import { fetchProjects } from '../../store/actions/projects'
 
 
 class Projects extends Component {
+    componentDidMount(){
+        //load all projects
+        this.props.fetchProjects();
+    }
+
     render(){
+        // console.log("props is: ", this.props);
         return(
             <View style={styles.container}>
-                <Text>Projects screen</Text>
+                <Text style={styles.title}>Projects</Text>
             </View>
         )
     }
@@ -14,8 +22,20 @@ class Projects extends Component {
 
 const styles = StyleSheet.create({
     container: {
-       height: '100%',
+        height: '100%',
+        backgroundColor: '#f8f8f8',
+    },
+    title: {
+        color: '#3f4b59',
+        fontSize: 35,
+        fontWeight: 'bold'
     }
 });
 
-export default Projects;
+function mapStateToProps(state){
+    return {
+        projects: state.projects
+    }
+}
+
+export default connect(mapStateToProps, { fetchProjects })(Projects);
