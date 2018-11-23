@@ -1,10 +1,11 @@
 import React from 'react';
-import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation';
+import { createMaterialTopTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 //components
 import ProjectsNavigator from '../navbar/ProjectsNavigator';
 import AddProject from '../screens/AddProject';
 
+const styles = { tabColor: 'orange' };
 
 const AppNavigator = createMaterialTopTabNavigator({
         Projects: {
@@ -31,13 +32,16 @@ const AppNavigator = createMaterialTopTabNavigator({
             tabBarPosition: 'bottom'
         },
         tabBarOptions: {
-            activeTintColor: 'orange',
+            activeTintColor: styles.tabColor,
             inactiveTintColor: 'grey',
             style: {
                 backgroundColor: 'white',
                 height: '9%',
-                borderTopWidth: 0.3,
-                borderTopColor: 'orange'
+                borderTopWidth: 0.5,
+                borderTopColor: styles.tabColor
+            },
+            indicatorStyle: {
+                backgroundColor: styles.tabColor
             },
             showIcon: true
         }

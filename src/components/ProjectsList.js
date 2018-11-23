@@ -16,13 +16,13 @@ class ProjectsList extends Component {
 
     handleSelectedProject = (project) => {
         const { navigate } = this.props.navigation;
-        navigate('Team');
+        navigate('Team', { id: project.id });
         this.setState({currentProject: project})
     };
 
     render(){
         const projects = this.props.projects.map( (project, idx) => (
-            <ProjectItem key={idx} project={project} onProjectSelection={this.handleSelectedProject.bind(this, project.name)}/>
+            <ProjectItem key={idx} project={project} onProjectSelection={this.handleSelectedProject.bind(this, { name: project.name, id: idx })}/>
         ));
 
         return(
@@ -35,7 +35,7 @@ class ProjectsList extends Component {
 
 function mapStateToProps(state){
     return {
-        projects: state.projects
+        projects: state.projects,
     }
 }
 

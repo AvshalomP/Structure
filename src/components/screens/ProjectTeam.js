@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 //components
-// import ProjectTeamList from './ProjectItemList';
+import TeamList from '../TeamList';
 
 class ProjectTeam extends Component {
+    constructor(props){
+        super(props);
+    }
+
     render(){
         return(
             <View style={styles.container}>
                 <Text style={styles.title}>Team</Text>
-
+                <TeamList/>
             </View>
         )
     }

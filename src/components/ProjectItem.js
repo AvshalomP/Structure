@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
@@ -8,7 +8,11 @@ class ProjectItem extends Component {
         const { project, onProjectSelection } = this.props;
         return(
             <View style={styles.project}>
+                {/*<Image style={{width: '33%', height: '100%'}}*/}
+                            {/*source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}*/}
+                {/*/>*/}
                 <Text style={styles.name}>{project.name}</Text>
+
                 <TouchableOpacity onPress={onProjectSelection}>
                     <Icon name="ios-arrow-round-forward" color='#3f4b59' size={44}/>
                 </TouchableOpacity>
@@ -36,7 +40,8 @@ const styles = StyleSheet.create({
     name: {
         color: '#3f4b59',
         fontSize: 25,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginLeft: 10
     }
 });
 
