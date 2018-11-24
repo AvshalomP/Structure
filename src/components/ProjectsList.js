@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
 import { connect } from 'react-redux';
+import { setCurrentProject } from '../store/actions/currentProject';
 //component
 import ProjectItem from './ProjectItem';
 
@@ -8,16 +9,14 @@ import ProjectItem from './ProjectItem';
 class ProjectsList extends Component {
     constructor(props){
         super(props);
-
-        this.state = {
-            currentProject: ""
-        }
     }
 
     handleSelectedProject = (project) => {
         const { navigate } = this.props.navigation;
-        navigate('Team', { id: project.id });
-        this.setState({currentProject: project})
+        const { setCurrentProject } = this.props;
+
+        setCurrentProject(project);
+        navigate('Team');
     };
 
     render(){
@@ -39,4 +38,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, null)(ProjectsList);
+export default connect(mapStateToProps, { setCurrentProject })(ProjectsList);

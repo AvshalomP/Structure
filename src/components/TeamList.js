@@ -22,7 +22,7 @@ class TeamList extends Component {
 
 function mapStateToProps(state){
     return {
-        team: state.projects[0].team,
+        team: state.projects[state.currentProject].team,
         departments: state.departments
     }
 }

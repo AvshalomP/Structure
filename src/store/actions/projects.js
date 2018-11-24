@@ -29,21 +29,21 @@ export const deleteProject  = (project_name) => {
 
 const projects = [
     {
-        name: 'Z',
+        name: 'Pay n Go',
         team: {
-            product: [ { name: 'Anastasia', role: 'PM - FrontEnd'}, { name: 'Matt', role: 'PM - BackEnd'} ],
-            qa: [ { name: 'Ankita', role: 'FE tester'}, { name: 'Michael', role: 'BE tester'} ],
-            dev: [ { name: 'Cameron', role: 'FE dev'}, { name: 'Ed', role: 'BE dev'} ],
-            design: [ {name: 'Jodie', role: 'UX/UI'} ]
+            product: [ { name: 'Anna', role: 'PM - FrontEnd'}, { name: 'John', role: 'PM - BackEnd'} ],
+            qa: [ { name: 'Dan', role: 'FE tester'}, { name: 'Melany', role: 'BE tester'} ],
+            dev: [ { name: 'Kath', role: 'FE dev'}, { name: 'Colt', role: 'BE dev'} ],
+            design: [ {name: 'Norman', role: 'UX/UI'} ]
         }
     },
     {
-        name: 'Fast Lane',
+        name: 'Comm',
         team: {
-            product: [ { name: 'Anastasia', role: 'PM - FrontEnd'}, { name: 'Matt', role: 'PM - BackEnd'} ],
-            qa: [ { name: 'Ankita', role: 'FE tester'}, { name: 'Michael', role: 'BE tester'} ],
-            dev: [ { name: 'Cameron', role: 'FE dev'}, { name: 'Ed', role: 'BE dev'} ],
-            design: [ {name: 'Jodie', role: 'UX/UI'} ]
+            product: [ { name: 'Sam', role: 'PM'} ],
+            qa: [ { name: 'Justin', role: 'FE tester'}, { name: 'Tom', role: 'BE tester'} ],
+            dev: [ { name: 'Sarah', role: 'FE dev'}, { name: 'Naama', role: 'BE dev'} ],
+            design: [ {name: 'Ron', role: 'UX/UI'} ]
         }
     }
 
