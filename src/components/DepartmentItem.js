@@ -7,7 +7,7 @@ import MemberItem from './MemberItem';
 
 const DepartmentItem = ({name, team, onToggle, info}) => {
     console.log("TEAM is: ", team);
-    const iconName = info ? "ios-arrow-up" : "ios-arrow-down";
+    const iconName = info ? "ios-remove" : "ios-add";
     const teamInfo = team.map( (member, idx) => (
         <MemberItem key={idx} member={member}/>
     ));
@@ -17,7 +17,7 @@ const DepartmentItem = ({name, team, onToggle, info}) => {
             <View style={styles.departmentHeader}>
                 <Text style={styles.name}>{name}</Text>
                 <TouchableOpacity onPress={onToggle}>
-                    <Icon name={iconName} color='#3f4b59' size={26}/>
+                    <Icon name={iconName} color='#3f4b59' size={30}/>
                 </TouchableOpacity>
             </View>
             { info && teamInfo }
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     },
     name: {
         color: '#3f4b59',
-        fontSize: 25,
+        fontSize: 20,
         fontWeight: 'bold',
         padding: 5
     }
