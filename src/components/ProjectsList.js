@@ -21,7 +21,8 @@ class ProjectsList extends Component {
 
     render(){
         const projects = this.props.projects.map( (project, idx) => (
-            <ProjectItem key={idx} project={project} onProjectSelection={this.handleSelectedProject.bind(this, { name: project.name, id: idx })}/>
+            <ProjectItem key={idx} project={project}
+                         onProjectSelection={this.handleSelectedProject.bind(this, { name: project.name, id: idx })}/>
         ));
 
         return(

@@ -16,6 +16,7 @@ class ProjectItem extends Component {
                 <TouchableOpacity onPress={onProjectSelection}>
                     <Icon name="ios-arrow-round-forward" color='#3f4b59' size={44}/>
                 </TouchableOpacity>
+
             </View>
         )
     }

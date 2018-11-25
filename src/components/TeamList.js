@@ -8,10 +8,31 @@ import DepartmentItem from './DepartmentItem';
 class TeamList extends Component {
     constructor(props){
         super(props);
+
+        this.state = {
+            info: this.initInfo(Object.getOwnPropertyNames(props.team).length)
+        }
     }
+
+    handleToggleDepartmentInfo = (idx) => {
+        const info = [...this.state.info];
+        info[idx] = !info[idx];
+        this.setState({ info })
+    };
+
+    initInfo = (len) => {
+        const info = [];
+        while(len-->0)
+            info.push(false);
+        return info;
+    };
+
     render(){
-        const departments = this.props.departments.map( (department, idx) =>
-                            <DepartmentItem key={idx} department={department}/>);
+        const { team } = this.props;
+        const departments = Object.getOwnPropertyNames(team).map( (department, idx) =>
+                            <DepartmentItem key={idx} info={this.state.info[idx]}
+                                            name={department.toUpperCase()} team={team[department]}
+                                            onToggle={this.handleToggleDepartmentInfo.bind(this, idx)} />);
         return(
             <ScrollView>
                 {departments}
@@ -23,7 +44,6 @@ class TeamList extends Component {
 function mapStateToProps(state){
     return {
         team: state.projects[state.currentProject].team,
-        departments: state.departments
     }
 }
 
