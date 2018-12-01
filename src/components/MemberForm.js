@@ -31,16 +31,13 @@ class MemberForm extends Component {
         //TODO: fix Picker!!
         return(
             <View>
-                <Text style={[styles.text, styles.bold, {marginTop: 15}]}>Department</Text>
-                <View style={{ marginBottom: 20, borderBottomWidth: 1, borderBottomColor: '#b9b9b9',
-                    paddingVertical: 5 }}>
-                        <ModalDropdown dropdownStyle={{ marginTop: 5, width: '84%', paddingHorizontal: 25, borderWidth: 1, borderColor: '#d4d4d4'}}
-                                       dropdownTextStyle={{ color: '#3f4b59', fontSize: 17,
-                                           fontWeight: '600', paddingVertical: 15}}
+                <Text style={[styles.text, styles.bold]}>Department</Text>
+                <View style={ styles.dropdownContainer }>
+                        <ModalDropdown dropdownStyle={styles.dropdownStyle} dropdownTextStyle={styles.dropdownTextStyle}
                                        style={{borderWidth: 0}} onSelect={(idx, value) => this.onDepartmentSelect(value)}
-                                   options={['Product', 'QA', 'Dev', 'Design', 'Other']}>
+                                       options={['Product', 'QA', 'Dev', 'Design', 'Other']}>
                         <View style={styles.dropdownContent} textStyle={styles.dropdown}>
-                            <Text style={[styles.dropdownText, { color: departmentColor }]}>{department}</Text>
+                            <Text style={{ fontSize: 15, color: departmentColor }}>{department}</Text>
                             <Icon name="ios-arrow-down" color="#3f4b59" size={25}/>
                         </View>
                     </ModalDropdown>
@@ -63,6 +60,7 @@ const styles = StyleSheet.create({
     text: {
         color: '#3f4b59',
         fontSize: 15,
+        marginTop: 15
     },
     bold: {
         fontWeight: 'bold'
@@ -80,8 +78,24 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         alignSelf: 'flex-end'
     },
-    dropdownText: {
-        fontSize: 15,
+    dropdownContainer: {
+        marginBottom: 20,
+        paddingVertical: 5,
+        borderBottomWidth: 1,
+        borderBottomColor: '#b9b9b9',
+    },
+    dropdownStyle: {
+        width: '84%',
+        marginTop: 5,
+        paddingHorizontal: 25,
+        borderWidth: 1, borderColor:
+            '#d4d4d4'
+    },
+    dropdownTextStyle: {
+        color: '#3f4b59',
+        fontSize: 17,
+        fontWeight: '600',
+        paddingVertical: 15
     },
     dropdownContent: {
         flex: 1,
