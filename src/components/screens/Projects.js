@@ -27,12 +27,12 @@ const styles = StyleSheet.create({
     container: {
         height: '100%',
         backgroundColor: '#f8f8f8',
-        padding: 10
+        padding: 20
     },
     title: {
         color: '#3f4b59',
-        fontSize: 35,
-        fontWeight: 'bold',
+        fontSize: 33,
+        fontWeight: '800',
         paddingBottom: 20
     }
 });

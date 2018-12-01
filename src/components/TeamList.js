@@ -29,10 +29,12 @@ class TeamList extends Component {
 
     render(){
         const { team } = this.props;
-        const departments = Object.getOwnPropertyNames(team).map( (department, idx) =>
-                            <DepartmentItem key={idx} info={this.state.info[idx]}
-                                            name={department.toUpperCase()} team={team[department]}
-                                            onToggle={this.handleToggleDepartmentInfo.bind(this, idx)} />);
+        const departments = team.map( (department, idx) => {
+                            const departmentName = Object.getOwnPropertyNames(department)[0];
+                            return (<DepartmentItem key={idx} info={this.state.info[idx]} team={team[idx][departmentName]}
+                                            name={departmentName.toUpperCase()}
+                                            onToggle={this.handleToggleDepartmentInfo.bind(this, idx)} />)
+                            });
         return(
             <ScrollView>
                 {departments}

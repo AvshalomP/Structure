@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import ProjectsNavigator from '../navbar/ProjectsNavigator';
 import AddProject from '../screens/AddProject';
 
-const styles = { tabColor: 'orange' };
+const styles = { tabColor: '#3f4b59' };
 
 const AppNavigator = createMaterialTopTabNavigator({
         Projects: {
@@ -37,7 +37,7 @@ const AppNavigator = createMaterialTopTabNavigator({
             style: {
                 backgroundColor: 'white',
                 height: '9%',
-                borderTopWidth: 0.5,
+                borderTopWidth: 1,
                 borderTopColor: styles.tabColor
             },
             indicatorStyle: {

@@ -6,7 +6,6 @@ import MemberItem from './MemberItem';
 
 
 const DepartmentItem = ({name, team, onToggle, info}) => {
-    console.log("TEAM is: ", team);
     const iconName = info ? "ios-remove" : "ios-add";
     const teamInfo = team.map( (member, idx) => (
         <MemberItem key={idx} member={member}/>

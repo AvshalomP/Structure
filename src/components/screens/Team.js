@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 //components
 import TeamList from '../TeamList';
 
-class ProjectTeam extends Component {
+class Team extends Component {
     constructor(props){
         super(props);
     }
@@ -26,11 +26,11 @@ const styles = StyleSheet.create({
     },
     title: {
         color: '#3f4b59',
-        fontSize: 35,
+        fontSize: 33,
         fontWeight: 'bold',
         paddingBottom: 20
     }
 });
 
 
-export default ProjectTeam;
+export default Team;
