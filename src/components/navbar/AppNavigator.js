@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'react-native';
 import { createMaterialTopTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 //components
@@ -11,7 +12,7 @@ const AppNavigator = createMaterialTopTabNavigator({
         Projects: {
             screen: ProjectsNavigator,
             navigationOptions: {
-                tabBarLabel: 'Projects',
+                tabBarLabel: 'PROJECTS',
                 tabBarIcon: ({ tintColor }) => (
                     <Icon name="ios-folder" color={tintColor} size={24} />
                 )
@@ -20,7 +21,7 @@ const AppNavigator = createMaterialTopTabNavigator({
         Add: {
             screen: AddProject,
             navigationOptions: {
-                tabBarLabel: 'Add Project',
+                tabBarLabel: 'ADD PROJECT',
                 tabBarIcon: ({ tintColor }) => (
                     <Icon name="ios-add" color={tintColor} size={30} />
                 )
@@ -38,10 +39,10 @@ const AppNavigator = createMaterialTopTabNavigator({
                 backgroundColor: 'white',
                 height: '9%',
                 borderTopWidth: 1,
-                borderTopColor: styles.tabColor
+                borderTopColor: '#E8E8E8'
             },
             indicatorStyle: {
-                backgroundColor: styles.tabColor
+                backgroundColor: 'none'
             },
             showIcon: true
         }
