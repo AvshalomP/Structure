@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Text, TextInput, TouchableOpacity, StyleSheet, Button } from 'react-native';
+import { ScrollView, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 //components
 import MemberForm from './MemberForm';
-import Input from './Input';
 
 class AddProjectForm extends Component {
     constructor(props){
@@ -21,10 +20,9 @@ class AddProjectForm extends Component {
 
     render(){
         // const members = this.state.membersCount.
+
         return(
             <ScrollView>
-                <Input text="Project Name" placeholder="Tracker"/>
-                <Text style={[styles.text, styles.bold, styles.headline]}>Team</Text>
                 <MemberForm removeBtn={false}/>
                 <TouchableOpacity onPress={this.handleAddMember}>
                     <View style={{flexDirection: 'row', alignItems: 'center'}}>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {View, Text, Picker, TouchableOpacity, StyleSheet} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import ModalDropdown from 'react-native-modal-dropdown';
 import Icon from 'react-native-vector-icons/Ionicons';
 //components
@@ -28,9 +28,11 @@ class MemberForm extends Component {
     render(){
         const { removeBtn } = this.props;
         const { department, departmentColor } = this.state;
-        //TODO: fix Picker!!
+
         return(
             <View>
+                <Input text="Project Name" placeholder="Tracker"/>
+                <Text style={[styles.text, styles.bold, styles.headline]}>Team</Text>
                 <Text style={[styles.text, styles.bold]}>Department</Text>
                 <View style={ styles.dropdownContainer }>
                         <ModalDropdown dropdownStyle={styles.dropdownStyle} dropdownTextStyle={styles.dropdownTextStyle}

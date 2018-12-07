@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text } from 'react-native';
 import { createMaterialTopTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 //components
@@ -42,7 +41,7 @@ const AppNavigator = createMaterialTopTabNavigator({
                 borderTopColor: '#E8E8E8'
             },
             indicatorStyle: {
-                backgroundColor: 'none'
+                backgroundColor: 'none' //styles.tabColor
             },
             showIcon: true
         }
