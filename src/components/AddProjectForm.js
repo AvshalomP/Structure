@@ -3,34 +3,52 @@ import { ScrollView, View, Text, TouchableOpacity, StyleSheet } from 'react-nati
 import Icon from 'react-native-vector-icons/Ionicons';
 //components
 import MemberForm from './MemberForm';
+import Input from './Input';
 
 class AddProjectForm extends Component {
     constructor(props){
         super(props);
 
         this.state = {
-            project: { name: "", team: [] },
-            membersCount: 1
+            id: 1,
+            project: { name: "", team: [{ product: ["first"], id: 1 }] },
         }
     }
 
-    handleAddMember = (event) => {
-
+    handleAddMember = () => {
+        let id = this.state.id + 1;
+        let updatedTeam = [...this.state.project.team, { product: [], id }];
+        this.setState({ project: { name: this.state.project.name, team: updatedTeam }, id})
     };
 
+    handleRemoveMember = (id) => {
+        const team = this.state.project.team.filter( (member) => member.id !== id );
+        this.setState({ project: {name: this.state.project.name, team }})
+    };
+
+
     render(){
-        // const members = this.state.membersCount.
+        const { project } = this.state;
+        let removeBtn = true;
+        console.log("Render team: ", project.team);
+        const memberForms = project.team.map( (member, idx, team) => {
+            if(idx === team.length-1)
+                removeBtn = false;
+            return (<MemberForm key={member.id} removeBtn={removeBtn}
+                                onRemoveMember={this.handleRemoveMember.bind(this, member.id)}/>)
+        });
 
         return(
             <ScrollView>
-                <MemberForm removeBtn={false}/>
+                <Input text="Project Name" placeholder="Tracker"/>
+                { memberForms }
                 <TouchableOpacity onPress={this.handleAddMember}>
                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
                         <Icon name="ios-add" color="#00a3e0" size={25}/>
                         <Text style={styles.addBtn}>Add Member</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => true}>
+                <TouchableOpacity>
                     <Text style={styles.submitBtn}>Submit</Text>
                 </TouchableOpacity>
             </ScrollView>

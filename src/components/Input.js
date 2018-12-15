@@ -7,7 +7,8 @@ class Input extends Component {
         super(props);
 
         this.state = {
-            borderBottomColor: '#b9b9b9'
+            borderBottomColor: '#b9b9b9',
+            inputText: ""
         }
     }
 
@@ -19,15 +20,16 @@ class Input extends Component {
         this.setState({ borderBottomColor: '#b9b9b9' })
     };
 
-    render()
-    {
+    render() {
         const { text, placeholder } = this.props;
         const { borderBottomColor } = this.state;
+
         return (
             <View>
                 <Text style={[styles.text, styles.bold]}>{text}</Text>
-                <TextInput style={[styles.input, { borderBottomColor }]}
-                           onFocus={this.onFocus} onBlur={this.onBlur} placeholder={`e.g. ${placeholder}`}/>
+                <TextInput style={[styles.input, { borderBottomColor }]} onFocus={this.onFocus}
+                           onBlur={this.onBlur} placeholder={`e.g. ${placeholder}`} value={this.state.inputText}
+                           onChangeText={(text1) => this.setState({ inputText: text1 })}/>
             </View>
         )
     }
