@@ -11,7 +11,7 @@ class AddProjectForm extends Component {
 
         this.state = {
             id: 1,
-            project: { name: "", team: [{ product: ["first"], id: 1 }] },
+            project: { name: "", team: [{ product: [], id: 1 }] },
         }
     }
 
